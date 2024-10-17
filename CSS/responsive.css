@@ -51,9 +51,16 @@
   margin: auto;
 }
 
-
-
-
+footer{
+  width: 100%;
+}
+nav ul li a{
+  display: inline-block;
+  width: 100%;
+ background-color: none;
+  padding: 5px;
+  color: var(--primary-color);
+}
 .search-movie{
  display: none;
 }

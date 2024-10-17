@@ -65,10 +65,10 @@ function addToWatchlist(movie) {
   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || []; // Get current watchlist from localStorage
   watchlist.push(movie);  // Add the movie to the watchlist
   localStorage.setItem('watchlist', JSON.stringify(watchlist));  // Save the updated watchlist to localStorage
-  alert(`${movie.title} has been added to your watchlist!`);  // Confirmation
+  alert(`${movie.title} has been added to your watchlist!`);  // 
 }
 
-// Call the function to fetch and display movies
+
 getMovies();
 
 
