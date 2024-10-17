@@ -1,0 +1,87 @@
+/* Media Querry  */
+
+@media (max-width: 760px) {
+  /* Existing Styles */
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  
+    margin: auto;
+  }
+
+  
+  .title-text {
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    margin: auto; 
+    margin-top: 0;
+    padding: 1em;
+  }
+
+  
+}
+
+
+@media (max-width: 797px) {
+
+  .nav-links{
+   display: none;
+   
+  }
+
+
+  .header{
+   background-color: transparent;
+  }
+  
+  .movie-item {
+    width: 100%;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+.movie{
+  width: 100%;
+  margin: auto;
+}
+
+.movie-item{
+  width: 100%;
+  margin: auto;
+}
+
+
+
+
+.search-movie{
+ display: none;
+}
+ 
+
+.logo img{
+  width: 100px; 
+}
+
+#watchlist-grid{
+margin: 0px auto;
+width: 100%;
+
+}
+
+}
+
+button{
+  margin: 5px;
+}
+
+
+@media (min-width:768px) {
+  .mobile-nav{
+    display: none;
+  }
+
+  .hamburger{
+    display: none;
+  }
+} 

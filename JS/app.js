@@ -4,12 +4,11 @@ const getMovies = async () => {
   console.log(result);
 
   const movieContainer = document.querySelector('.movie'); // Select the container to hold movie items
- 
- 
+
   result.results.forEach(movie => {
     const movie_item = document.createElement('div');
     movie_item.classList.add('movie_item'); // Add class for styling
-   
+
     // Create and append poster image
     const posterImg = document.createElement('img');
     posterImg.src = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
@@ -45,7 +44,21 @@ const getMovies = async () => {
     movie_item.appendChild(addWatchList);  // Append the button to the movie item
     movieContainer.appendChild(movie_item);  // Append each movie item to the container
   });
+
+  // Fixing the Hamburger Menu Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const mobile_menu = document.querySelector('.mobile-nav');
+  
+
+hamburger.addEventListener('click', function () {
+  hamburger.classList.toggle('is-active');
+  mobile_menu.classList.toggle('is-active');
+
+});
+
 };
+
+
 
 // Function to add the movie to the watchlist
 function addToWatchlist(movie) {
@@ -89,8 +102,15 @@ function displayMovies(movies) {
       <p>Rating: ${movie.vote_average}</p>
       <p>${movie.overview}</p>
     `;
-
-    movieGrid.appendChild(movieItem); // Append each movie to the grid
+    const img = movieItem.querySelector('img');
+    img.style.width = '50%'; 
+    img.style.margin='auto' 
+    
+    movieItem.style.width='50%'
+    movieItem.style.margin= 'auto'
+    movieItem.style.height= '50%'
+    
+    movieGrid.appendChild(movieItem); 
   });
 }
 
@@ -146,3 +166,5 @@ function getTrailer(videos) {
   }
   return '<p>No trailer available.</p>';
 }
+
+

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Details</title>
   <link rel="stylesheet" href="./CSS/styles.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
 </head>
 <body>
   <header class="header">
@@ -17,17 +18,35 @@
           <li>
             <a href="./watchlist.html">Watch List</a>
           </li>
+          <li>
+            <a href="./movie-details.html">Movie Details</a>
+          </li>
+
+          <li>
+            <div class="searchBarMovie">
+              <input type="text" class="search-movie" placeholder="Search Movie" id="search-input">
+              <button id="search-button" class="search-button">Search</button> <!-- Added a search button -->
+            </div>
+          </li>
         </ul>
       </nav>
+      <!-- Hamburger -->
+      <span class="hamburger">
+        <div class="bar">
+        </div>
+      </span>
     </div>
   </header>
+  <nav class="mobile-nav">
+    <a href="./index.html">Home</a>
+    <a href="./watchlist.html">Watch List</a>
+    <a href="./movie-details.html">Movie Details</a>
+  </nav>
 
-  <h1>Movie Details</h1>
-  <div id="movie-details" class="movie-details"></div> <!-- Container for movie details -->
+ 
+  <div id="movie-details" class="movie-details"></div> 
 
   <div id="image-gallery" class="image-gallery"></div> <!-- Container for image gallery -->
-
-  <script src="./JS/detail.js"></script>
 
   <footer class="footer-Home">
     <nav>
@@ -49,5 +68,8 @@
   
   </footer>
   
+  <script src="./JS/detail.js"></script>
+  <script src="./JS/hamburger.js"></script>
+  <script src="./JS/app.js"></script>
 </body>
 </html>

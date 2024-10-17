@@ -38,8 +38,8 @@ header {
   margin: auto;
   padding: 9px;
   z-index: 1000;
-  background-color: #f4ecec;
-  color: #191717;
+  /* background-color: #f4ecec; */
+  color: #fbf5f5;
   position: fixed;
   border-radius: 1em;
   top: 0;
@@ -78,7 +78,7 @@ input {
   display: flex;
   width: 100%;
   background-color: var(--secondary-color-color);
-  color: rgb(12, 12, 12);
+  color: var(--primary-color);
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -107,13 +107,9 @@ p:hover {
 }
 
 
-.movie-title-container {
-  width: 50%;
-  margin: auto;
-  margin-top: 8em;
 
 
-}
+
 
 /* Animation for App Tittle */
 
@@ -133,19 +129,43 @@ h1 {
   animation: mymove 2.3s ease-in-out 3.5s;
 }
 
-.title-text {
+
+
+
+.movie-title-container {
+  width: 50%;
+  margin: 8em auto;
   align-items: center;
-  padding: 1em;
-  margin-left: 15em;
-  margin-top: 2em;
+  border-radius: 10px;
 }
 
+h1 {
+
+  justify-content: center;
+  margin-top: 3em;
+}
+
+h5 {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 5px;
+  padding: 5px;
+}
 
 .movie-title-container h1 {
   color: var(--secondary-color-color);
   text-align: center;
+  width: 100%;
 
 }
+
+.logo img {
+  width: 20%;
+  margin-top: 1em;
+  border-radius: 50%;
+
+}
+
 
 /* Styling the image content  */
 .movie {
@@ -163,7 +183,7 @@ h1 {
   flex-direction: column;
   gap: 15px;
   width: 300px;
-  margin-left: 7em;
+  margin: auto;
 
 }
 
@@ -178,29 +198,17 @@ h1 {
 /* Styles for the watchlist grid */
 #watchlist-grid {
   display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 15em;
+  margin-right: 15em;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+
 }
 
-/* Styling for each movie item */
-.movie-item {
-  width: 50%;
-  margin: 20px;
-  margin: auto;
-  margin-top: 10em;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Movie image styling */
-.movie-item img {
-  max-width: 100%;
-  border-radius: 4px;
-}
 
 /* Button styling */
 button {
@@ -209,7 +217,7 @@ button {
   padding: 10px;
   border: none;
   background-color: #233C2F;
-  color: var(--primary-color);
+  color:var(--primary-color);
   cursor: pointer;
   border-radius: 4px;
 }
@@ -218,7 +226,6 @@ button:hover {
   background-color: var(--primary-color-100);
   color: var(--primary-color);
   transform: translateY(-10px);
-  /* Move button below its position */
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
@@ -230,18 +237,20 @@ p {
 
 .searchBarMovie {
   display: flex;
+
 }
 
 #movieGrid {
   margin: auto;
+
 }
+
 
 
 
 /* Movie Details Styling */
 .movie-details {
   padding: 20px;
-
   border-radius: 8px;
   margin: 20px auto;
   max-width: 700px;
@@ -249,6 +258,7 @@ p {
 
 .movie-details h2 {
   font-size: 2rem;
+  margin-top: 4em;
 }
 
 .movie-details p {
@@ -260,6 +270,7 @@ p {
   width: 100%;
   height: 300px;
   margin-top: 10px;
+  margin: auto;
 }
 
 
@@ -268,87 +279,89 @@ p {
   padding: 20px;
 }
 
-
-
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+/* Styling the Hamburger */
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
 }
 
-.movie-grid img {
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  content: ' ';
+  display: block;
   width: 100%;
-  border-radius: 10px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0px;
+  transition: 0.4s;
+  position: relative;
 }
 
 
-.footer-Home {
+/* Active state */
+.hamburger.is-active::before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active::after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+  /* Hide the middle bar */
+}
+
+
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  min-height: 100vh;
+  z-index: 98;
+  background-color: #233C2F;
+  margin-top: 120px;
+  transition: .4s;
+
+}
+
+.mobile-nav.is-active {
+  left: 0;
+}
+
+.mobile-nav a {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 16px;
+  margin-top: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+
+}
+
+.mobile-nav a:hover {
+  background-color: var(--primary-color);
+  color: black
+}
+
+footer {
   background-color: var(--primary-color-100);
   color: #fff;
-  padding: 5em;
+  padding: 2em;
   margin-top: 10em;
   text-align: center;
-}
-
-footer .span {
-  margin-top: 10em;
-}
-
-
-
-
-/* Media Querry  */
-
-@media (max-width: 760px) {
-  /* Existing Styles */
-  .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust grid columns for smaller screens */
-    margin: auto;
-  }
-
-  .header {
-    width: 100%; /* Ensure header fills the width */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack navigation items vertically */
-    align-items: center; /* Center navigation items */
-  }
-
-  .title-text {
-    margin-left: auto; /* Adjust title position */
-    margin-top: 0; /* Remove top margin for title */
-  }
-
-  
-}
-
-
-@media (max-width: 768px) {
-  .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
-  .header {
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .title-text {
-    margin-left: auto;
-    margin-top: 0;
-  }
-
-  /* Additional styles for mobile */
-  .movie-item {
-    width: 100%;
-  }
-
-  p {
-    font-size: 14px;
-  }
 }

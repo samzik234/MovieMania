@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Watchlist</title>
-    <link rel="stylesheet" href="./CSS/styles.css"> <!-- Optional: Add your CSS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Watchlist</title>
+  <link rel="stylesheet" href="./CSS/styles.css"> 
+  <link rel="stylesheet" href="./CSS/responsive.css">
 </head>
+
 <body>
-    <header>
-      <header class="header">
-        <div class="container">
-          <nav class="nav-links">
-            <ul list-items>
-              <li>
-                <a href="./index.html">Home</a>
-              </li>
-              <li>
-                <a href="./watchlist.html">Watch List</a>
-              </li>
-              <li>
-                <a href="./movie-details.html">Movie Details</a>
-              </li>
-            
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </header>
-
-    <main>
-        <div id="watchlist-grid"></div> <!-- Watchlist movies will be displayed here -->
-    </main>
-
-    <script src="./JS/watchlist.js"></script> <!-- Script to display the watchlist -->
-
-    <footer class="footer-Home">
-      <nav>
-        <ul>
+  <header class="header">
+    <div class="container">
+      <nav class="nav-links">
+        <ul list-items>
           <li>
-            <a href="./index.html" > Home</a>
+            <a href="./index.html">Home</a>
           </li>
           <li>
-            <a href="/watchlist.html" > Watch List</a>
+            <a href="./watchlist.html">Watch List</a>
           </li>
           <li>
-            <a href="./movie-details.html" > Movie Details</a>
+            <a href="./movie-details.html">Movie Details</a>
+          </li>
+
+          <li>
+            <div class="searchBarMovie">
+              <input type="text" class="search-movie" placeholder="Search Movie" id="search-input">
+              <button id="search-button" class="search-button">Search</button> <!-- Added a search button -->
+            </div>
           </li>
         </ul>
       </nav>
-      <h1>&copy; 2024 Movie Mania</h1>
-      <span class="span">Courtesy Simon Azike</span>
-    
-    </footer>
-    
+      <!-- Hamburger -->
+      <span class="hamburger">
+        <div class="bar">
+        </div>
+      </span>
+    </div>
+  </header>
+  <nav class="mobile-nav">
+    <a href="./index.html">Home</a>
+    <a href="./watchlist.html">Watch List</a>
+    <a href="./movie-details.html">Movie Details</a>
+  </nav>
+  <main>
+    <div id="watchlist-grid"></div> <!-- Watchlist movies will be displayed here -->
+  </main>
 
+  <footer class="footer-Home">
+    <nav>
+      <ul>
+        <li>
+          <a href="./index.html"> Home</a>
+        </li>
+        <li>
+          <a href="/watchlist.html"> Watch List</a>
+        </li>
+        <li>
+          <a href="./movie-details.html"> Movie Details</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>&copy; 2024 Movie Mania</h1>
+    <span class="span">Courtesy Simon Azike</span>
+
+  </footer>
+
+  <script src="./JS/watchlist.js"></script> 
+  <script src="./JS/hamburger.js"></script>
+  <script src="./JS/app.js"></script>
 </body>
+
 </html>

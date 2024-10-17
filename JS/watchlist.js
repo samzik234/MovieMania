@@ -53,6 +53,7 @@ function displayWatchlist() {
       moveMovieDown(index);
     });
   });
+
 }
 
 // Function to remove a movie from the watchlist
