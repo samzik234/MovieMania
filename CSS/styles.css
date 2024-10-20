@@ -90,20 +90,10 @@ input {
 /* Styling Movie Content/ title/popularity */
 
 p {
-  background-color: var(--primary-color);
-  color: var(--secondary-color-200);
-  overflow: hidden;
-  padding: 15px;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-p:hover {
   background-color: #233C2F;
   border-radius: 10px;
   color: var(--secondary-color-color);
-  opacity: 1;
+  padding: 1em;
   transform: translateY(0);
 
 }
@@ -219,7 +209,7 @@ button {
   padding: 10px;
   border: none;
   background-color: #233C2F;
-  color:var(--primary-color);
+  color: var(--primary-color);
   cursor: pointer;
   border-radius: 4px;
 }
